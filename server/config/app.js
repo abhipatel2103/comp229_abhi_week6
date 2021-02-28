@@ -3,6 +3,22 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let cors = require('cors');
+
+
+//modules for authentication
+let session = require('express-session');
+let passport = require('passport');
+
+//more authentication- JWT
+let passportJWT = require('passport-jwt');
+let JWTStrategy = passportJWT.Strategy;	//made Alias
+let ExtractJWT = passportJWT.ExtractJwt;
+
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy; 	//made Alias
+
+let flash = require('connect-flash');
 
 //Database setup
 let mongoose = require("mongoose");
@@ -21,6 +37,7 @@ mongoDB.once('open', ()=>{
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let booksRouter = require('../routes/book');
+//let contactsRouter = require('../routes/contact_list');
 
 let app = express();
 
@@ -28,15 +45,63 @@ let app = express();
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
+//setup express session
+app.use(session({
+	secret: "SomeSecret",
+	saveUninitialized: false,
+	resave: false
+}));
+
+//initialize flash
+app.use(flash());
+
+//initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+//passport user configuration
+	//Create a User Model instance
+	let userModel = require('../models/user');
+	let User = userModel.User;
+
+
+//Implement a User Authentication strategy
+passport.use(User.createStrategy());
+
+
+//Serialize and deserialize User info- that mean encrypt and decrypt
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 
+//JWT code
+let jwtOptions = {};
+jwtOptions.jwtFromRequest = ExtractJWT.fromAuthHeaderAsBearerToken();
+jwtOptions.secretOrKey= DB.Secret;
+
+let strategy = new JWTStrategy(jwtOptions, (jwt_payload, done)=>{
+	User.findById(jwt_payload.id)
+		.then(user =>{
+			return done(null, user);
+		})
+		.catch(err =>{
+			return done(err, false);
+		});
+});
+
+passport.use(strategy); //activated above created strategy
+
+
+//routing
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/book-list', booksRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
