@@ -2,6 +2,9 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
+//Enable JWT
+let jwt = require('jsonwebtoken');
+
 //connect to our Book model
 let Book = require('../models/book');
 
@@ -18,14 +21,14 @@ module.exports.displayBookList = (req, res, next) => {
         {
             //console.log(BookList);
 
-            res.render('book/list', {title: 'Books', BookList: bookList})            
+            res.render('book/list', {title: 'Books', BookList: bookList, displayName: req.user ? req.user.displayName : ''})            
         }
     });
 }
 
 /* GET Route for the displaying Add page - CREATE Operation */
 module.exports.displayAddPage = (req, res, next) =>{
-            res.render('book/add', {title: 'Add Book'})            
+            res.render('book/add', {title: 'Add Book', displayName: req.user ? req.user.displayName : ''})            
 
 }
 
@@ -66,7 +69,7 @@ module.exports.displayEditPage = (req, res, next) =>{
 		else
 		{
 			//Show the edit view
-			res.render('book/edit', {title :'Edit Book', book: bookToEdit})
+			res.render('book/edit', {title :'Edit Book', book: bookToEdit, displayName: req.user ? req.user.displayName : ''})
 		}
 	});
 	

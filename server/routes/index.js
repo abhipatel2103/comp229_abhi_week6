@@ -22,4 +22,22 @@ router.get('/services', indexcontroller.displayServicesPage);
 /* GET Contact_us page. */
 router.get('/contact', indexcontroller.displayContactPage);
 
+
+/* GET Route for the displaying the Login page  */
+router.get('/login', indexcontroller.displayLoginPage);
+
+/* POST Route for the processing the Login page  */
+router.post('/login', indexcontroller.processLoginPage);
+
+
+/* GET Route for the displaying the Register page  */
+router.get('/register', indexcontroller.displayRegisterPage);
+
+/* POST Route for the processing the Register page  */
+router.post('/register', indexcontroller.processRegisterPage);
+
+
+/* GET to perform UserLogout */
+router.get('/logout',indexcontroller.performLogout);
+
 module.exports = router;

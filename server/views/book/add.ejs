@@ -1,7 +1,12 @@
-<%- include ../Partials/header.ejs %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include ../Partials/header.ejs %>
+
+</head>
+<body>
 
 <%- include ../Partials/main_nav.ejs %>
-
 <!--Content for the Add page-->
 
 <div class="container">
@@ -53,3 +58,21 @@
 <%- include ../Partials/bottom_nav.ejs %>  
 
 <%- include ../Partials/footer.ejs %>
+
+<style>
+.logo {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    height: 40px;
+    margin-right: 7px;
+}
+@media(min-width:1200px){
+main.container { height: calc(100vh - 125px); }
+}
+</style>
+
+</body>
+</html>
