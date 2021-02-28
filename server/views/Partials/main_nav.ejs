@@ -37,6 +37,14 @@
 		<% } %>
         	<a class="nav-link" href="/services"> Services</a>
       </li>
+
+	  	<% if (key == "books") { %>
+			<li class="nav-item active" >
+		<% } else { %>
+			<li class="nav-item">
+		<% } %>
+        	<a class="nav-link" href="/book-list"> Books</a>
+      </li>
 	  	<% if (key == "contact") { %>
 			<li class="nav-item active" >
 		<% } else { %>

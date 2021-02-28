@@ -8,7 +8,7 @@
 
 
 
-var app = require('./config/app');
+var app = require('./server/config/app');
 var debug = require('debug')('week-3-part2:server');
 var http = require('http');
 
