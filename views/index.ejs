@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include Partials/header.ejs %>
+
+</head>
+<body>
+
+<%- include Partials/main_nav.ejs %>	
+	
+	
+<% if (key == "home") { %>
+		<%- include Partials/home.ejs %>
+		<% } else if(key == "projects") { %>
+		<%- include Partials/projects.ejs %>	
+		<% } else if(key == "services"){ %>
+		<%- include Partials/services.ejs %>	
+		<% } else if(key == "about"){ %>
+		<%- include Partials/about.ejs %>	
+		<% } else { %>
+		<%- include Partials/contact.ejs %>	
+		<% } %>
+
+
+
+
+
+
+<%- include Partials/bottom_nav.ejs %>
+
+<%- include Partials/footer.ejs %>
+</body>
+</html>

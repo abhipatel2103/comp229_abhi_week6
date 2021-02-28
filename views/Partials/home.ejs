@@ -1,0 +1,127 @@
+<!--Home page include name, mission statement, buttons and photo-->
+<main class="container">
+		<div class="jumbotron jumbotron-fluid wrapper">
+			<h1 class="display-7 header-text"><%= title %></h1>
+		</div>
+		<hr style="margin:0; padding:0;"/>
+		
+		<div class="hero-section">
+			<div class="row">
+				<div class="col-md-7">
+					<h1 class="display-7">Hi, I'm Abhi</h1>
+					<h5>SQL developer</h5>
+					<p><hr/></p>
+					<h2><b>Mission :</b></h2>
+					<p>I work hard every day to provide respected service for customers who are in need to keep their data organized , efficient and secured.</p>
+					<p>To know more about my experience, what I provide or how we can get in touch for optimistic services, connect with me today. </p>
+					<hr/>
+					<button type="button" class="btn btn-warning"><a href="https://comp229-abhi.herokuapp.com/about">Know more</a></button>
+					<button type="button" class="btn btn-warning"><a href="https://comp229-abhi.herokuapp.com/services">Services</a></button>
+				</div>
+				<div class="col-md-5">
+					<img style="width:100%;" src="Assets/images/hero-thumbnail.jpg">
+				</div>
+			</div>
+		</div>
+</main>
+
+
+	<style>
+	/******CSS CODE below *******/
+		.wrapper {
+			position: relative;
+		}
+		.hero-section {
+			padding: 20px;
+			background: #eee;
+		}
+		
+		/****** Button CSS START *******/
+		.btn,
+		button,
+		input[type="submit"],
+		button[type="submit"]
+		 {
+			display:inline-block;
+			padding: 10px 30px;
+			color: #000;
+		}
+		.btn:hover,
+		button:hover,
+		input[type="submit"]:hover,
+		button[type="submit"]:hover {
+			background:#343a40;
+			color: #fff;
+			border-color: #343a40;
+		}
+		button a {color: #000; }
+		button a:hover { 
+			color: #fff; 
+			text-decoration: none;
+			}
+		/****** Button CSS END *******/
+		
+		
+		.header-wrapper {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: 0;
+			height: 220px;
+		}
+
+		.header-wrapper img {
+			height: 100%;
+			width: 100%;
+		}
+		
+		.header-text{
+			font-variant: small-caps;
+			font-family: Georgia, serif;
+			margin-left: 80px;
+		}
+
+		
+		.header-text {
+			z-index: 2;
+			position: relative;
+			color: #034077;;
+			margin-left: 15px;
+			
+		}
+		
+		/***** logo CSS *****/
+		.logo{
+			position: relative;
+			top: 0;
+			right:0;
+			left:0;
+			z-index: 0;
+			height: 40px;
+			margin-right:7px;
+
+
+		}
+		.navbar-brand{
+			margin-left: 20px;
+			font-style: italic;
+
+		}
+
+		.nav-link{
+			margin-right: 15px;
+		}
+		
+		
+		.background{
+			background: #f5f5f5;
+			
+		}
+		.jumbotron {
+			position: relative;
+			background: linear-gradient(to right, #EFEFBB, #D4D3DD);
+			margin: 0;
+		}
+		
+	</style>

@@ -1,0 +1,53 @@
+	<style>
+		.wrapper {
+			position: relative;
+		}
+
+		.header-wrapper {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: 0;
+			height: 220px;
+		}
+
+		.header-wrapper img {
+			height: 100%;
+			width: 100%;
+		}
+
+		.header-text {
+			z-index: 2;
+			position: relative;
+			color: #fff;
+			margin-left: 15px;
+		}
+		.logo{
+			
+			
+			position: relative;
+			top: 0;
+			right:0;
+			left:0;
+			z-index: 0;
+			height: 40px;
+			margin-right:7px;
+
+
+		}
+		.navbar-brand{
+			margin-left: 20px;
+			font-style: italic;
+
+		}
+
+		.nav-link{
+			margin-right: 15px;
+		}
+		
+		.header-text{
+			font-variant: small-caps;
+			font-family: Georgia, serif;
+		}
+	</style>

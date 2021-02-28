@@ -1,0 +1,116 @@
+<!--this file include code for 3 cards that contains projects and its photo and information-->
+
+<main class="container">
+	<div class="jumbotron jumbotron-fluid wrapper">
+		<h1 class="display-7 header-text"> <%= title %></h1>		
+	</div>
+	<div>
+		<h1 class="display-7"><%= name %></h1>
+	</div>
+		
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-body">
+				<img src="Assets/images/smart_helmet2.jpg" style="height:230px" class="card-img-top" alt="...">
+					<h5 class="card-title">Smart Helmet</h5>
+					<p class="card-text">
+						•	Bike having a smart helmet will not start its engine if rider does not wear a smart helmet.<br/>
+						•	Furthermore, engine will stop after 30 seconds if riders remove the smart helmet while riding the bike.<br/>
+						•	Also, Bike will not start if rider is drunk./
+
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-body">
+					<img src="Assets/images/telehealth3.png" class="card-img-top" alt="...">	
+					<h5 class="card-title">Telehealth</h5>
+					<p class="card-text">
+						• Telehealth is the use of digital information and communication technologies, 
+							such as computers and mobile devices, to access health care services remotely and manage your health care.<br/>
+						•	And, it can be accessed via different type of devices like, mobile, computer and ipad.
+					</p>
+				</div>
+			  </div>
+  		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-body">
+				<img src="Assets/images/car_spa.jpg" class="card-img-top" alt="...">
+					<h5 class="card-title">Automatic Car-spa Plant</h5>
+					<p class="card-text">
+						•	A plant that is able to wash,rub and dry the car automatically.<br/><br/>
+						•	Additionally, plant is enabled with different settings of user interaction like selecting packages from gold, silver and platinum.
+					</p>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</main>
+
+	<style>
+	/******CSS CODE Below*****/
+		.wrapper {
+			position: relative;
+		}
+
+		.header-wrapper {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: 0;
+			height: 220px;
+		}
+
+		.header-wrapper img {
+			height: 100%;
+			width: 100%;
+		}
+
+		.header-text {
+			z-index: 2;
+			position: relative;
+			color: #034077;
+			margin-left: 15px;
+		}
+		.logo{
+			
+			
+			position: relative;
+			top: 0;
+			right:0;
+			left:0;
+			z-index: 0;
+			height: 40px;
+			margin-right:7px;
+
+
+		}
+		.navbar-brand{
+			margin-left: 20px;
+			font-style: italic;
+
+		}
+		main { padding: 0 0 50px; }
+		.nav-link{
+			margin-right: 15px;
+		}
+		
+		.header-text{
+			font-variant: small-caps;
+			font-family: Georgia, serif;
+		}
+		.background{
+			background: #f5f5f5;
+		}
+		.card-body img { margin-bottom:20px;}
+		.jumbotron {
+			position: relative;
+			background: linear-gradient(to right, #EFEFBB, #D4D3DD);
+		}
+	</style>

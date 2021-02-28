@@ -1,0 +1,141 @@
+<!-- this section include my photo, my information and button to open resume-->
+<main class="container">
+	<div class="jumbotron jumbotron-fluid wrapper">
+		
+		<h1 class="display-7 header-text"><%= title %></h1>
+		
+	</div>
+	<div><h1 class="display-7"><%= name %></h1></div>
+		<div class="about-section">
+			<div class="row">
+				<div class="col-md-3">
+					<img class="profile-pic" src="Assets/images/Abhi.jpg" alt="Abhi's photo"/>
+				</div>
+				<div class="col-md-9">
+					<h2>Hi, I'm Abhi Patel</h2>
+					<hr style="border-top: 0.2px solid white;"/>
+					<div class="text">
+					<p>
+						I am from India and have a bachelor's degree in computer Engineering.<br/><br/>
+
+						After that, I worked as SQL developer for more than 1 year and as a software specialist in a medical IT company 
+						for 2 years where I managed databases of multiple hospitals and provided technical support.<br/><br/>
+						
+						Currently, I have taken admission in an Artificial Intelligence Fast-track program to enhance my other skills
+						like programming skills, data visualization skills and data analysis skills by learning important and fundamental 
+						aspects of Artificial Intelligence. <br/><br/>
+
+						In my spare time, I like to do outdoor activities like swimming, dance, horse-riding and travelling.<br/><br/>
+
+						Professionally, I would like to become a data analyst in a reputed organization and would feel grateful to have
+						a chance to suggest important decisions to the organization through my data analysis and related skills.
+					</p>
+					<button type="button" class="btn btn-warning"><a href="https://drive.google.com/file/d/17Qh9oTsr54dTpL9MHenEfpv2X4sJjxl-/" target="_blank">View My Resume</a></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+	<style>
+	/*****CSS Code below***/
+	
+		/**CSS code for profile pci**/
+		.profile-pic {
+			width:100%;
+			border-radius: 100%;
+		}
+		.text{
+			text-align: left;
+			font-size: 13px;
+
+		}
+		.wrapper {
+			position: relative;
+		}
+
+		.header-wrapper {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: 0;
+			height: 220px;
+		}
+
+		.header-wrapper img {
+			height: 100%;
+			width: 100%;
+		}
+
+		.header-text {
+			z-index: 2;
+			position: relative;
+			color: #034077;
+			margin-left: 15px;
+		}
+		.logo{
+			
+			
+			position: relative;
+			top: 0;
+			right:0;
+			left:0;
+			z-index: 0;
+			height: 40px;
+			margin-right:7px;
+
+
+		}
+		.navbar-brand{
+			margin-left: 20px;
+			font-style: italic;
+
+		}
+
+		.nav-link{
+			margin-right: 15px;
+		}
+		
+		.header-text{
+			font-variant: small-caps;
+			font-family: Georgia, serif;
+			margin-left: 80px;
+		}
+		.background{
+			background: #f5f5f5;
+		}
+		.jumbotron {
+			position: relative;
+			background: linear-gradient(to right, #EFEFBB, #D4D3DD);
+		}
+		.about-section {
+			padding: 20px;
+			color: #fff;
+			background: #000;
+		}
+		/****** Button CSS START *******/
+		.btn,
+		button,
+		input[type="submit"],
+		button[type="submit"]
+		 {
+			display:inline-block;
+			padding: 10px 30px;
+			color: #000;
+		}
+		.btn:hover,
+		button:hover,
+		input[type="submit"]:hover,
+		button[type="submit"]:hover {
+			background:#343a40;
+			color: #fff !important;
+			border-color: #343a40;
+		}
+		button a {color: #000; }
+		button a:hover { 
+			color: #fff; 
+			text-decoration: none;
+			}
+		/****** Button CSS END *******/
+	</style>
