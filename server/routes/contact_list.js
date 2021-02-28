@@ -7,10 +7,8 @@ let passport = require('passport');
 let jwt= require('jsonwebtoken');
 
 
-
-
-//reference to Book controller
-let bookController = require('../controllers/book');
+//reference to Contact_list controller
+let contactController = require('../controllers/contact_list');
 
 //helper function for guad purpose
 function requireAuth(req, res, next)
@@ -23,25 +21,24 @@ function requireAuth(req, res, next)
 	next();
 }
 
-/* GET Route for the Book List page - READ OPeration */
-router.get('/', bookController.displayBookList);
+/* GET Route for the Contact List page - READ OPeration */
+router.get('/', contactController.displayContactList);
 
 
 /* GET Route for the displaying Add page - CREATE Operation */
-router.get('/add', requireAuth, bookController.displayAddPage);
+router.get('/add', requireAuth, contactController.displayAddPage);
 
 /* POST Route for the processing Add page - CREATE Operation */
-router.post('/add', requireAuth, bookController.processAddPage);
+router.post('/add', requireAuth, contactController.processAddPage);
 
 /* GET Route for the displaying Edit page - UPDATE Operation */
-router.get('/edit/:id', requireAuth, bookController.displayEditPage);
+router.get('/edit/:id', requireAuth, contactController.displayEditPage);
 
 /* POST Route for the processing Edit page - UPDATE Operation */
-router.post('/edit/:id', requireAuth, bookController.processEditPage);
+router.post('/edit/:id', requireAuth, contactController.processEditPage);
 
 /* GET to perform deletion - DELETE Operation */
-router.get('/delete/:id', requireAuth, bookController.performDelete);
-
+router.get('/delete/:id', requireAuth, contactController.performDelete);
 
 
 module.exports = router;
