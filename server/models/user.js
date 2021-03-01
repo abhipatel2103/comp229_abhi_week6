@@ -1,8 +1,10 @@
-//Require modules for user model
+/**Student Name: Abhi Patel, Student num: 301167516, File name : user.js, Date: 02/28/2021**/
+
+
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');
 
-
+//Creating User model- for 'user' collection in Db
 let User = mongoose.Schema(
 	{
 		username :

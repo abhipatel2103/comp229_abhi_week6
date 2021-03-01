@@ -1,3 +1,5 @@
+/**Student Name: Abhi Patel, Student num: 301167516, File name : app.js, Date: 02/28/2021**/
+
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
@@ -18,9 +20,11 @@ let ExtractJWT = passportJWT.ExtractJwt;
 let passportLocal = require('passport-local');
 let localStrategy = passportLocal.Strategy; 	//made Alias
 
+//flash- used to prompt(popup) message
 let flash = require('connect-flash');
 
 //Database setup
+//mongoose is a module that used to configure mongoDb in Node
 let mongoose = require("mongoose");
 let DB = require("./db");
 
@@ -36,7 +40,7 @@ mongoDB.once('open', ()=>{
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
-let contactsRouter = require('../routes/contact_list');
+let contactsRouter = require('../routes/contact_list'); //refernce route of business contact_list here to configure it in app.js
 
 let app = express();
 
@@ -44,7 +48,7 @@ let app = express();
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
-//setup express session
+//setup express session - for user login  session
 app.use(session({
 	secret: "SomeSecret",
 	saveUninitialized: false,
@@ -54,7 +58,7 @@ app.use(session({
 //initialize flash
 app.use(flash());
 
-//initialize passport
+//initialize passport - it is a module which is used mainly for authentication/authorization.
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -68,7 +72,7 @@ app.use(passport.session());
 passport.use(User.createStrategy());
 
 
-//Serialize and deserialize User info- that mean encrypt and decrypt
+//Serialize and deserialize User info- that means encrypt and decrypt
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
@@ -100,7 +104,7 @@ passport.use(strategy); //activated above created strategy
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.use('/contact-list',contactsRouter);
+app.use('/contact-list',contactsRouter); //add business contact-list route
 
 
 // catch 404 and forward to error handler

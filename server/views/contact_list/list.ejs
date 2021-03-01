@@ -1,3 +1,5 @@
+<!--Student Name: Abhi Patel, Student num: 301167516, File name : list.ejs, Date: 02/28/2021-->
+<!--Created this so User can view/access all business contact-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +15,7 @@
   <main class="container">
     <div class="row">
         <div class="offset-md-1 col-md-10">
-            <h1>Business Contact</h1>
+            <h1><%= title %></h1>
 			
 			<!--Added if condition to hide add contact button if user is not logged in-->
 			<% if(typeof displayName== 'string' && displayName){%>

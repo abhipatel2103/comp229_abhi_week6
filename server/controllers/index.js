@@ -1,3 +1,5 @@
+/**Student Name: Abhi Patel, Student num: 301167516, File name : index.js, Date: 02/28/2021**/
+
 let express = require('express');
 let router = express.Router();
 
@@ -11,6 +13,8 @@ let DB = require('../config/db');
 //Create User Model instance from Model folder/user.js file
 let userModel = require('../models/user');
 let User = userModel.User //Alias - So that we dont have to write everytime userModel.User
+
+//decoupled logic of routes from routes/index.js file and added here
 
 module.exports.displayHomePage = (req, res, next) =>{
 	res.render('index', { title: 'Welcome to my portfolio website',key: "home", displayName: req.user ? req.user.displayName : ''});

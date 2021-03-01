@@ -1,3 +1,5 @@
+/**Student Name: Abhi Patel, Student num: 301167516, File name : contact_list.js, Date: 02/28/2021**/
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -20,6 +22,8 @@ function requireAuth(req, res, next)
 	}
 	next();
 }
+
+//decoupled logic from this file to controller/contact_list.js file
 
 /* GET Route for the Contact List page - READ OPeration */
 router.get('/', contactController.displayContactList);
